@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\Equal_or_not\Equal_or_not\obj\Debug\Equal_or_not.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\Equal_or_not\Equal_or_not\obj\Debug\Equal_or_not.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\Equal_or_not\Equal_or_not\bin\Debug\Equal_or_not.exe.config
+C:\gowthami\DotNet.Practise\Equal_or_not\Equal_or_not\bin\Debug\Equal_or_not.exe
+C:\gowthami\DotNet.Practise\Equal_or_not\Equal_or_not\bin\Debug\Equal_or_not.pdb
+C:\gowthami\DotNet.Practise\Equal_or_not\Equal_or_not\obj\Debug\Equal_or_not.exe
+C:\gowthami\DotNet.Practise\Equal_or_not\Equal_or_not\obj\Debug\Equal_or_not.pdb

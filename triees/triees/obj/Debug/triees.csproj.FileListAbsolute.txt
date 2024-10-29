@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\triees\triees\bin\Debug\triees.exe.config
+C:\gowthami\DotNet.Practise\triees\triees\bin\Debug\triees.exe
+C:\gowthami\DotNet.Practise\triees\triees\bin\Debug\triees.pdb
+C:\gowthami\DotNet.Practise\triees\triees\obj\Debug\triees.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\triees\triees\obj\Debug\triees.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\triees\triees\obj\Debug\triees.exe
+C:\gowthami\DotNet.Practise\triees\triees\obj\Debug\triees.pdb

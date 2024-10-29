@@ -1,0 +1,2 @@
+C:\gowthami\DotNet.Practise\operation\operation\obj\Debug\operation.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\operation\operation\obj\Debug\operation.csproj.CoreCompileInputs.cache
