@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\assignment 2\assignment 2\bin\Debug\assignment 2.exe.config
+C:\gowthami\DotNet.Practise\assignment 2\assignment 2\bin\Debug\assignment 2.exe
+C:\gowthami\DotNet.Practise\assignment 2\assignment 2\bin\Debug\assignment 2.pdb
+C:\gowthami\DotNet.Practise\assignment 2\assignment 2\obj\Debug\assignment 2.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\assignment 2\assignment 2\obj\Debug\assignment 2.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\assignment 2\assignment 2\obj\Debug\assignment 2.exe
+C:\gowthami\DotNet.Practise\assignment 2\assignment 2\obj\Debug\assignment 2.pdb

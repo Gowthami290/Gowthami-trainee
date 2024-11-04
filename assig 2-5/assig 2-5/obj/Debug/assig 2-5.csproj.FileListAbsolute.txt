@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\assig 2-5\assig 2-5\bin\Debug\assig 2-5.exe.config
+C:\gowthami\DotNet.Practise\assig 2-5\assig 2-5\bin\Debug\assig 2-5.exe
+C:\gowthami\DotNet.Practise\assig 2-5\assig 2-5\bin\Debug\assig 2-5.pdb
+C:\gowthami\DotNet.Practise\assig 2-5\assig 2-5\obj\Debug\assig 2-5.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\assig 2-5\assig 2-5\obj\Debug\assig 2-5.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\assig 2-5\assig 2-5\obj\Debug\assig 2-5.exe
+C:\gowthami\DotNet.Practise\assig 2-5\assig 2-5\obj\Debug\assig 2-5.pdb
