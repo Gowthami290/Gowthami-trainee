@@ -1,7 +1,0 @@
-C:\gowthami\DotNet.Practise\multi\multi\bin\Debug\multi.exe.config
-C:\gowthami\DotNet.Practise\multi\multi\bin\Debug\multi.exe
-C:\gowthami\DotNet.Practise\multi\multi\bin\Debug\multi.pdb
-C:\gowthami\DotNet.Practise\multi\multi\obj\Debug\multi.csproj.AssemblyReference.cache
-C:\gowthami\DotNet.Practise\multi\multi\obj\Debug\multi.csproj.CoreCompileInputs.cache
-C:\gowthami\DotNet.Practise\multi\multi\obj\Debug\multi.exe
-C:\gowthami\DotNet.Practise\multi\multi\obj\Debug\multi.pdb

@@ -1,2 +1,0 @@
-C:\gowthami\DotNet.Practise\assig 2-3\assig 2-3\obj\Debug\assig 2-3.csproj.AssemblyReference.cache
-C:\gowthami\DotNet.Practise\assig 2-3\assig 2-3\obj\Debug\assig 2-3.csproj.CoreCompileInputs.cache

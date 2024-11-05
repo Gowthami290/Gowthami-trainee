@@ -1,7 +1,0 @@
-C:\gowthami\DotNet.Practise\positive_negative\positive_negative\obj\Debug\positive_negative.csproj.AssemblyReference.cache
-C:\gowthami\DotNet.Practise\positive_negative\positive_negative\obj\Debug\positive_negative.csproj.CoreCompileInputs.cache
-C:\gowthami\DotNet.Practise\positive_negative\positive_negative\bin\Debug\positive_negative.exe.config
-C:\gowthami\DotNet.Practise\positive_negative\positive_negative\bin\Debug\positive_negative.exe
-C:\gowthami\DotNet.Practise\positive_negative\positive_negative\bin\Debug\positive_negative.pdb
-C:\gowthami\DotNet.Practise\positive_negative\positive_negative\obj\Debug\positive_negative.exe
-C:\gowthami\DotNet.Practise\positive_negative\positive_negative\obj\Debug\positive_negative.pdb

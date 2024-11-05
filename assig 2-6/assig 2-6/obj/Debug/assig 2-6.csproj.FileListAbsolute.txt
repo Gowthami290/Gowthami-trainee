@@ -1,7 +1,0 @@
-C:\gowthami\DotNet.Practise\assig 2-6\assig 2-6\bin\Debug\assig 2-6.exe.config
-C:\gowthami\DotNet.Practise\assig 2-6\assig 2-6\bin\Debug\assig 2-6.exe
-C:\gowthami\DotNet.Practise\assig 2-6\assig 2-6\bin\Debug\assig 2-6.pdb
-C:\gowthami\DotNet.Practise\assig 2-6\assig 2-6\obj\Debug\assig 2-6.csproj.AssemblyReference.cache
-C:\gowthami\DotNet.Practise\assig 2-6\assig 2-6\obj\Debug\assig 2-6.csproj.CoreCompileInputs.cache
-C:\gowthami\DotNet.Practise\assig 2-6\assig 2-6\obj\Debug\assig 2-6.exe
-C:\gowthami\DotNet.Practise\assig 2-6\assig 2-6\obj\Debug\assig 2-6.pdb
