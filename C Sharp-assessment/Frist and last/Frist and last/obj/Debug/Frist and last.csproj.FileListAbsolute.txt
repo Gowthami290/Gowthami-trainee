@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Frist and last\Frist and last\obj\Debug\Frist and last.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Frist and last\Frist and last\obj\Debug\Frist and last.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Frist and last\Frist and last\bin\Debug\Frist and last.exe.config
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Frist and last\Frist and last\bin\Debug\Frist and last.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Frist and last\Frist and last\bin\Debug\Frist and last.pdb
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Frist and last\Frist and last\obj\Debug\Frist and last.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Frist and last\Frist and last\obj\Debug\Frist and last.pdb

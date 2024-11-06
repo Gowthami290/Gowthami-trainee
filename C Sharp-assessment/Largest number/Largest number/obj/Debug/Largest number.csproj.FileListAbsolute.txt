@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Largest number\Largest number\bin\Debug\Largest number.exe.config
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Largest number\Largest number\bin\Debug\Largest number.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Largest number\Largest number\bin\Debug\Largest number.pdb
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Largest number\Largest number\obj\Debug\Largest number.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Largest number\Largest number\obj\Debug\Largest number.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Largest number\Largest number\obj\Debug\Largest number.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Largest number\Largest number\obj\Debug\Largest number.pdb

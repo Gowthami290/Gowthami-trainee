@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Character\Character\bin\Debug\Character.exe.config
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Character\Character\bin\Debug\Character.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Character\Character\bin\Debug\Character.pdb
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Character\Character\obj\Debug\Character.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Character\Character\obj\Debug\Character.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Character\Character\obj\Debug\Character.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Character\Character\obj\Debug\Character.pdb
