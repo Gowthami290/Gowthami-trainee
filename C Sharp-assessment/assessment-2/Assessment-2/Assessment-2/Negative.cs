@@ -38,8 +38,9 @@ public class Negative
         catch (Exception ex)
         {
             Console.WriteLine("An unexpected error occurred: " + ex.Message);
-            Console.Read();
+            
         }
+        Console.Read();
     }
 }
  

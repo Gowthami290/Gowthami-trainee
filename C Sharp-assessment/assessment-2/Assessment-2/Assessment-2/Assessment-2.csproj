@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Pricess</StartupObject>
+    <StartupObject>Negative</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
