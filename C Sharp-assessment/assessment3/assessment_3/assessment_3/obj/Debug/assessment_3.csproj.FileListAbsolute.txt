@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\C Sharp-assessment\assessment3\assessment_3\assessment_3\bin\Debug\assessment_3.exe.config
+C:\gowthami\DotNet.Practise\C Sharp-assessment\assessment3\assessment_3\assessment_3\bin\Debug\assessment_3.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\assessment3\assessment_3\assessment_3\bin\Debug\assessment_3.pdb
+C:\gowthami\DotNet.Practise\C Sharp-assessment\assessment3\assessment_3\assessment_3\obj\Debug\assessment_3.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\assessment3\assessment_3\assessment_3\obj\Debug\assessment_3.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\assessment3\assessment_3\assessment_3\obj\Debug\assessment_3.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\assessment3\assessment_3\assessment_3\obj\Debug\assessment_3.pdb

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0EF78C8-F1AF-41EB-93AE-4481E574C610}</ProjectGuid>
+    <ProjectGuid>{5DFBA81A-BE07-4524-B105-C82A25CD0E84}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Asseessment_3</RootNamespace>
-    <AssemblyName>Asseessment_3</AssemblyName>
+    <RootNamespace>assessment_3</RootNamespace>
+    <AssemblyName>assessment_3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Asseessment_3.Program</StartupObject>
+    <StartupObject>assessment_3.Calculator.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="CricketTeam.cs" />
     <Compile Include="Box.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="Clricketeam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkspaceFile.cs" />
+    <Compile Include="Workspace.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
