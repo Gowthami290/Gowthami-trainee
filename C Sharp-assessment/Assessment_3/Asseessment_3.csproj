@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38BB2729-16DA-4E4A-BF59-81EB0C8597DE}</ProjectGuid>
+    <ProjectGuid>{A0EF78C8-F1AF-41EB-93AE-4481E574C610}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Assignment_6</RootNamespace>
-    <AssemblyName>Assignment-6</AssemblyName>
+    <RootNamespace>Asseessment_3</RootNamespace>
+    <AssemblyName>Asseessment_3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Start_End</StartupObject>
+    <StartupObject>Asseessment_3.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,20 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="Query.cs" />
-    <Compile Include="Square.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="CricketTeam.cs" />
+    <Compile Include="Box.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkspaceFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalculateLibrary\CalculateLibrary.csproj">
-      <Project>{7b599e5f-1070-4323-88d0-176658928edc}</Project>
-      <Name>CalculateLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

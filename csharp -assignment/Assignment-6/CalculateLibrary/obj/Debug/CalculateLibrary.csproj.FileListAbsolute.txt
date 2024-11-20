@@ -3,3 +3,4 @@ C:\gowthami\DotNet.Practise\csharp -assignment\Assignment-6\CalculateLibrary\bin
 C:\gowthami\DotNet.Practise\csharp -assignment\Assignment-6\CalculateLibrary\obj\Debug\CalculateLibrary.csproj.CoreCompileInputs.cache
 C:\gowthami\DotNet.Practise\csharp -assignment\Assignment-6\CalculateLibrary\obj\Debug\CalculateLibrary.dll
 C:\gowthami\DotNet.Practise\csharp -assignment\Assignment-6\CalculateLibrary\obj\Debug\CalculateLibrary.pdb
+C:\gowthami\DotNet.Practise\csharp -assignment\Assignment-6\CalculateLibrary\obj\Debug\CalculateLibrary.csproj.AssemblyReference.cache
