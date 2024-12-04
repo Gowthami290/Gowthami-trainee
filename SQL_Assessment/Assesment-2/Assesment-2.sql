@@ -1,26 +1,26 @@
-﻿create database sql_2
+﻿use infinite
 --1.	Write a query to display your birthday( day of week)
 --2.	Write a query to display your age in days
-select * from employee
+select * from emp
 select * from dept
  
-select  datename(weekday,'29-06-2002') as gowthsmi_birthday
+select  datename(weekday,'29-06-2002') as gowthami_birthday
  
  
-declare @dob date ='29-06-2002';
+declare @dob date = '29-06-2002';
 select datediff(day,@dob,getdate()) as total_days
-            --query 3
+        ----------------- --query 3---------------------------------
 
-Write a query to display all employees information those who joined before 5 years in the current month
-(Hint : If required update some HireDates in your EMP table of the assignment)*/
+--Write a query to display all employees information those who joined before 5 years in the current month
+--(Hint : If required update some HireDates in your EMP table of the assignment)*/
  
  
-select * from Employee
+select * from Emp
        where year(getdate()) - year(hiredate) > 5
        And month(hiredate) = month(getdate());
 
  
- --qurey 4
+-----------------------qurey 4----------------------------
   Create table Employee with empno, ename, sal, doj columns or use and perform the following operations in a single transaction
 	a. First insert 3 rows 
 	b. Update the second row sal with 15% increment  
@@ -52,7 +52,7 @@ WHERE empno = 1;
 ROLLBACK 
 -- Check the table after the transaction rollback
 SELECT * FROM Employee1;
-           --qurey 5
+           -----------------------qurey 5---------------------
   Create a user defined function calculate Bonus for all employees of a  given dept using 	following conditions
 	a.     For Deptno 10 employees 15% of sal as bonus.
 	b.     For Deptno 20 employees  20% of sal as bonus
@@ -78,11 +78,9 @@ SELECT
     empno
     ename,
     DeptNo,
-    Salary,
-    dbo.Cal_Bonus1(DeptNo, Salary) AS Bonus
-FROM
-    Employee;
-    --qurey 6
+    Sal,
+    dbo.Cal_Bonus1(DeptNo, Sal) AS Bonus from emp
+    -------------------------qurey 6-----------------------------------
 Create a procedure to update the salary of employee by 500 whose dept name is Sales and current salary is below 1500 (use emp table)
 has context menu*/
  
@@ -91,11 +89,13 @@ create or alter proc updateSal
 as
 begin
 update e
-set e.salary = e.salary+ 500 
-from employee e
+set e.sal = e.sal+ 500 
+from emp e
 Join DEPT D ON e.DeptNo = d.Deptno
-where d.Dname = 'Sales' and e.salary < 1500;
+where d.Dname = 'Sales' and e.sal < 1500;
 end
 exec updateSal;
-select * from Employee
+select * from Emp
  
+
+ select datediff(day,'22-2-2002',getdate()) as gow_bdy
