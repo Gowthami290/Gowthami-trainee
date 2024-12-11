@@ -5,3 +5,10 @@ C:\gowthami\DotNet.Practise\C Sharp-assessment\Employee\Employee\obj\Debug\Emplo
 C:\gowthami\DotNet.Practise\C Sharp-assessment\Employee\Employee\obj\Debug\Employee.csproj.CoreCompileInputs.cache
 C:\gowthami\DotNet.Practise\C Sharp-assessment\Employee\Employee\obj\Debug\Employee.exe
 C:\gowthami\DotNet.Practise\C Sharp-assessment\Employee\Employee\obj\Debug\Employee.pdb
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Assessment-5\Employee\Employee\bin\Debug\Employee.exe.config
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Assessment-5\Employee\Employee\bin\Debug\Employee.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Assessment-5\Employee\Employee\bin\Debug\Employee.pdb
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Assessment-5\Employee\Employee\obj\Debug\Employee.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Assessment-5\Employee\Employee\obj\Debug\Employee.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Assessment-5\Employee\Employee\obj\Debug\Employee.exe
+C:\gowthami\DotNet.Practise\C Sharp-assessment\Assessment-5\Employee\Employee\obj\Debug\Employee.pdb

@@ -40,5 +40,6 @@ class Program
 
             return (decimal)command.ExecuteScalar();
         }
-    }
+        Console.Read();
+    } 
 }
