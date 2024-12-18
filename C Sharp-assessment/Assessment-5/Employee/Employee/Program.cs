@@ -8,7 +8,7 @@ class Program
     {
         string connectionString = "Data Source=YourServer;Initial Catalog=YourDatabase;Integrated Security=True";
         string productName = "New Product";
-        decimal price = 100.00m;
+        float price = 100;
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {

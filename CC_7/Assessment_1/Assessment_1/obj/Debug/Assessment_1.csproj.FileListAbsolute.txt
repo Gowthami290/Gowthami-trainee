@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\CC_7\Assessment_1\Assessment_1\bin\Debug\Assessment_1.exe.config
+C:\gowthami\DotNet.Practise\CC_7\Assessment_1\Assessment_1\bin\Debug\Assessment_1.exe
+C:\gowthami\DotNet.Practise\CC_7\Assessment_1\Assessment_1\bin\Debug\Assessment_1.pdb
+C:\gowthami\DotNet.Practise\CC_7\Assessment_1\Assessment_1\obj\Debug\Assessment_1.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\CC_7\Assessment_1\Assessment_1\obj\Debug\Assessment_1.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\CC_7\Assessment_1\Assessment_1\obj\Debug\Assessment_1.exe
+C:\gowthami\DotNet.Practise\CC_7\Assessment_1\Assessment_1\obj\Debug\Assessment_1.pdb
