@@ -1,0 +1,7 @@
+C:\gowthami\DotNet.Practise\Project\Project\obj\Debug\Project.csproj.AssemblyReference.cache
+C:\gowthami\DotNet.Practise\Project\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
+C:\gowthami\DotNet.Practise\Project\Project\bin\Debug\Project.exe.config
+C:\gowthami\DotNet.Practise\Project\Project\bin\Debug\Project.exe
+C:\gowthami\DotNet.Practise\Project\Project\bin\Debug\Project.pdb
+C:\gowthami\DotNet.Practise\Project\Project\obj\Debug\Project.exe
+C:\gowthami\DotNet.Practise\Project\Project\obj\Debug\Project.pdb
