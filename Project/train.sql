@@ -13,7 +13,7 @@ IsActive bit
 )
 insert into train (trainnumber,trainname,source,destination,availableBerths, trainClass, IsActive)
 values
-(12345,'Bidhar express','Machiliptnam','Hydabard',50,'2A',1),
+(12345,'Bidhar express','Machiliptnam','Hyderabad',50,'2A',1),
 (12346,'Godavari express','vizag','machiliptnam',20,'1A',1);
 --------------------------------------------------------------------------------------------------------
 create or alter procedure Addtrain
@@ -29,6 +29,7 @@ insert into Trains(TrainNumber,Trainname,source, destination, availableBerths, t
 Values(@TrainNumber,@Trainname,@Source,@Destination, @availableBerths,@Trainclass,1);
 print 'train addded successfully';
 end;
+
 
 create or alter procedure ModifyTrain
 @TrainNumber int,@trainName varchar(20),@source varchar(20),@destination varchar(20),@availableBerths int,@trainclass varchar(20)
@@ -48,8 +49,9 @@ end;
 create or alter Procedure deleteTrain
 Drop procedure if exists train;
 
-select * from Train
------------------------------------------------
+select * from Trains
+-------------------------------------------
+---user
 create table BookingTickets
 (
 trainnumber int not null,
@@ -61,29 +63,31 @@ Berths int
 INSERT into Bookingtickets(trainnumber, passengername, class, berths)
 values
 (111,22,'gowthami','2a' ,33)
-----------------------------------
-create or alter procedure bookingtickets
+
+create or alter procedure sp_bookingtickets
 (
-trainnumber int not null, passengername varchar(50),class varchar(50), berths int
+@trainnumber int, @passengername varchar(50),@class varchar(50), @berths int
 )
 as
 begin
 insert into Bookingtickets(trainnumber,passengername,class,berths)
-values(@trainnumber,'@passengername','@class','@berths');
-select 'Booking successfull'as message,  'lastinsertid' () as bookingid;
+values(@trainnumber,@passengername,@class,@berths);
+--select 'Booking successfull'as message,  lastinsertid () as bookingid;
 end
-CREATE OR ALTER PROCEDURE Cancelticket (
-    @TrainNumber INT,
-    @PassengerName VARCHAR(50),
-    @Class VARCHAR(50),
-    @Berths INT
+
+
+CREATE OR ALTER PROCEDURE sp_Cancelticket (
+	@bokingid int
 )
 AS
 BEGIN
+DECLARE @Berths INT;
+   DECLARE @Class VARCHAR(50);
+	DECLARE @TrainNumber INT;
     DECLARE @AvailableSeats INT;
  
-    -- Retrieve available seats for the specified train
-    SELECT @AvailableSeats = AvailableSeats
+
+    SELECT @AvailableSeats = availableBerths
     FROM trains
     WHERE TrainNumber = @TrainNumber;
  
@@ -91,16 +95,14 @@ BEGIN
     BEGIN
         -- Update available seats in the trains table
         UPDATE trains
-        SET AvailableSeats =@AvailableSeats + @Berths
+        SET availableBerths =(@AvailableSeats + @Berths)
         WHERE TrainNumber = @TrainNumber;
- 
-        -- Delete the booking from the bookingtickets table
+
         DELETE FROM bookingtickets
-        WHERE TrainNumber = @TrainNumber
-          PassengerName = @PassengerName
-          Class = @Class
-          Berths = @Berths;
- 
+        WHERE TrainNumber = @TrainNumber and
+          Class = @Class and
+          Berths = @Berths and
+          bokingId = @BokingId;
         PRINT 'Ticket canceled successfully';
     END
     ELSE
@@ -124,12 +126,10 @@ as
  bookingtickets
  join
  train  on trainnumber = trainnumber
- end;
+ end
+
+
+
 
 Select * from Bookingtickets
-
-
-
-
-
-
+select * from trains

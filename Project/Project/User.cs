@@ -12,7 +12,7 @@ namespace Project
     {
         static SqlConnection con;
 
-        // Method to get SQL connection
+       //Method to get SQL connection
         static SqlConnection getConnection()
         {
             try
@@ -54,7 +54,7 @@ namespace Project
                 Console.WriteLine("3. Show All Trains");
                 Console.WriteLine("4. Show Booking");
                 Console.WriteLine("5. Exit");
-                Console.Write("Enter your choice: ");
+                Console.Write("Enter your choice ");
 
                 if (int.TryParse(Console.ReadLine(), out int choice))
                 {
@@ -76,60 +76,56 @@ namespace Project
                             Console.WriteLine("Exiting Admin Menu...");
                             return;
                         default:
-                            Console.WriteLine("Invalid choice. Try again.");
+                            Console.WriteLine("Invalid choice Try again");
                             break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Please enter a valid number.");
+                    Console.WriteLine("Please enter a valid number");
                 }
             }
         }
 
         public static void BookingTicket()
         {
-            Console.WriteLine("Enter TrainId");
-            string trainNo = Console.ReadLine();
-
-            Console.Write("Enter Passenger Name: ");
-            string passengerName = Console.ReadLine();
-
-            Console.Write("Enter Class: ");
-            string trainClass = Console.ReadLine();
-
-            Console.Write("Enter Berths to Book: ");
-            int berths = Convert.ToInt32(Console.ReadLine());
-
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                con.Open();
                 try
                 {
-                    string query = "update Train set AvailableBerths = AvailableBerths - @Berths " +
-                                   "where TrainId = @TrainId AND AvailableBerths >= @Berths and IsActive = 1";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@Berths", berths);
-                    cmd.Parameters.AddWithValue("@Trainnumber", trainno);
+                     Connection();
+                    Console.WriteLine("Enter TrainId");
+                    string trainNo = Console.ReadLine();
 
-                    con.Open();
+                    Console.Write("Enter Passenger Name ");
+                    string passengerName = Console.ReadLine();
+
+                    Console.Write("Enter Class ");
+                    string trainClass = Console.ReadLine();
+
+                    Console.Write("Enter Berths to Book ");
+                    int berths = Convert.ToInt32(Console.ReadLine());
+
+
+
+                    SqlCommand cmd = new SqlCommand("sp_bookingtickets", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@trainnumber", trainNo);
+                    cmd.Parameters.AddWithValue("@passengername", passengerName);
+                    cmd.Parameters.AddWithValue("@class", trainClass);
+                    cmd.Parameters.AddWithValue("@berths", berths);
+
+                    cmd.ExecuteNonQuery();
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        string insertBooking = "INSERT INTO Booking (Trainid, PassengerName, Class, Berths) " +
-                                               "VALUES (@TrainNo, @PassengerName, @Class, @Berths)";
-
-                        SqlCommand bookingCmd = new SqlCommand(insertBooking, con);
-                        bookingCmd.Parameters.AddWithValue("@TrainId", trainId);
-                        bookingCmd.Parameters.AddWithValue("@PassengerName", passengerName);
-                        bookingCmd.Parameters.AddWithValue("@Class", trainClass);
-                        bookingCmd.Parameters.AddWithValue("@Berths", berths);
-
-                        bookingCmd.ExecuteNonQuery();
-
                         Console.WriteLine("Ticket booked successfully");
+                    string query = "update Train set AvailableBerths = AvailableBerths - @berths " +
+                                   "where TrainId = @trainnumber AND AvailableBerths >= @berths and IsActive = 1";
                     }
                     else
                     {
@@ -148,29 +144,31 @@ namespace Project
         }
         public static void CancelTicket()
         {
-            Console.Write("Enter Booking Id to Cancel: ");
-            int bookingId = Convert.ToInt32(Console.ReadLine());
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
                 {
-                    string query = "UPDATE Booking SET Status = 'Cancelled' WHERE BookingId = @BookingId";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@BookingId", bookingId);
+                     Console.Write("Enter Booking Id to Cancel");
+                        int bookingId = Convert.ToInt32(Console.ReadLine());
+
+                    SqlCommand cmd = new SqlCommand("sp_Cancelticket", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                
+                    cmd.Parameters.AddWithValue("@bokingid", bookingId);
                     con.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        Console.WriteLine("Booking cancelled successfully.");
+                        Console.WriteLine("Booking cancelled successfully");
                     }
                     else
                     {
-                        Console.WriteLine("No booking found with the given ID.");
+                        Console.WriteLine("No booking found with the given ID");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("An error occurred: " + ex.Message);
+                    Console.WriteLine("An error occurred " + ex.Message);
                 }
             }
         }
@@ -194,7 +192,7 @@ namespace Project
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Booking";
+                string query = "SELECT * FROM BookingTickets";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -202,7 +200,7 @@ namespace Project
                 Console.WriteLine("Booking Details");
                 foreach (DataRow row in dt.Rows)
                 {
-                    Console.WriteLine($"BookingId: {row["BookingId"]}, TrainId: {row["TrainId"]}, Name: {row["PassengerName"]}, Status: {row["Status"]}");
+                    Console.WriteLine($"BookingId {row["BokingId"]}, TrainId {row["Trainnumber"]}, Name {row["PassengerName"]}");
                 }
             }
         }
