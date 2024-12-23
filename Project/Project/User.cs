@@ -110,7 +110,7 @@ namespace Project
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@Berths", berths);
-                    cmd.Parameters.AddWithValue("@Trainnumber", trainnumber);
+                    cmd.Parameters.AddWithValue("@Trainnumber", trainno);
 
                     con.Open();
 
@@ -122,7 +122,7 @@ namespace Project
                                                "VALUES (@TrainNo, @PassengerName, @Class, @Berths)";
 
                         SqlCommand bookingCmd = new SqlCommand(insertBooking, con);
-                        bookingCmd.Parameters.AddWithValue("@TrainId", trainid);
+                        bookingCmd.Parameters.AddWithValue("@TrainId", trainId);
                         bookingCmd.Parameters.AddWithValue("@PassengerName", passengerName);
                         bookingCmd.Parameters.AddWithValue("@Class", trainClass);
                         bookingCmd.Parameters.AddWithValue("@Berths", berths);
