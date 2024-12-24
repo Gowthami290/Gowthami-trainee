@@ -41,6 +41,7 @@ namespace Project
             con = new SqlConnection("Data Source=ICS-LT-D244D6FJ;Initial Catalog=MiniprojectRailway;" + "Integrated Security=true;");
 
             con.Open();
+            Console.WriteLine("Connected successfully:");
             return con;
         }
 
@@ -149,12 +150,12 @@ namespace Project
                 try
                 {
                      Console.Write("Enter Booking Id to Cancel");
-                        int bookingId = Convert.ToInt32(Console.ReadLine());
+                        int trainnumber = Convert.ToInt32(Console.ReadLine());
 
                     SqlCommand cmd = new SqlCommand("sp_Cancelticket", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                 
-                    cmd.Parameters.AddWithValue("@bokingid", bookingId);
+                    cmd.Parameters.AddWithValue("@trainnumber", trainnumber);
                     con.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
@@ -175,18 +176,18 @@ namespace Project
 
         public static void ShowAllTrains()
         {
-           
-                con = Connection();
-                string query = "select * from Trains where IsActive =1";
-                SqlCommand cmd = new SqlCommand(query, con);
-                dr = cmd.ExecuteReader();
-                Console.WriteLine("Avalible Trains");
-                while(dr.Read())
-                {
-                    Console.WriteLine($"{dr["trainid"]} | {dr["trainName"]} | {dr["source"]} | {dr["availableBerths"]} | {dr["trainClass"]}");
-                   
-                }
-            
+
+            con = Connection();
+            string query = "select * from Trains where IsActive =1";
+            SqlCommand cmd = new SqlCommand(query, con);
+            dr = cmd.ExecuteReader();
+            Console.WriteLine("Avalible Trains");
+            while (dr.Read())
+            {
+                Console.WriteLine($"{dr["trainid"]} | {dr["trainName"]} | {dr["source"]} | {dr["availableBerths"]} | {dr["trainClass"]}");
+
+            }
+
         }
         public static void ShowBooking()
         {
@@ -200,7 +201,7 @@ namespace Project
                 Console.WriteLine("Booking Details");
                 foreach (DataRow row in dt.Rows)
                 {
-                    Console.WriteLine($"BookingId {row["BokingId"]}, TrainId {row["Trainnumber"]}, Name {row["PassengerName"]}");
+                    Console.WriteLine($"Trainnumber {row["Trainnumber"]}, TrainId {row["PassengerName"]}");
                 }
             }
         }
