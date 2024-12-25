@@ -1,20 +1,19 @@
 CREATE DATABASE RailwayReservation
 use RailwayReservation
 
-create table Train
+create table Trains
 (
 trainnumber int primary key,
 trainName varchar(20),
 source varchar(20),
 destination varchar(20),
 availableBerths int,
-trainClass varchar(20),
 IsActive bit
 )
-insert into train (trainnumber,trainname,source,destination,availableBerths, trainClass, IsActive)
+insert into trains (trainnumber,trainname,source,destination,availableBerths, IsActive)
 values
-(12345,'Bidhar express','Machiliptnam','Hyderabad',50,'2A',1),
-(12346,'Godavari express','vizag','machiliptnam',20,'1A',1);
+(12345,'Bidhar express','Machiliptnam','Hyderabad',50,1),
+(12346,'Godavari express','vizag','machiliptnam',20,1);
 --------------------------------------------------------------------------------------------------------
 create or alter procedure Addtrain
 @TrainNumber int,@trainName varchar(20),@source varchar(20),@destination varchar(20),@availableBerths int,@trainclass varchar(20),@isActive bit
@@ -46,23 +45,23 @@ where TrainNumber = @TrainNumber;
 Print 'Train details updated Successfullly';
 end;
 
-create or alter Procedure deleteTrain
 Drop procedure if exists train;
 
 select * from Trains
+
 -------------------------------------------
 ---user
 create table BookingTickets
 (
-trainnumber int not null,
-foreign key (trainnumber)references trains(trainnumber),
+bookingid int identity(1,1),
+trainnumber int references trains(trainnumber),
 passengername varchar(50),
 class varchar(50),
 Berths int
 );
 INSERT into Bookingtickets(trainnumber, passengername, class, berths)
 values
-(111,22,'gowthami','2a' ,33)
+(12345,'gowthami','2a' ,3)
 
 create or alter procedure sp_bookingtickets
 (
@@ -70,61 +69,48 @@ create or alter procedure sp_bookingtickets
 )
 as
 begin
-insert into Bookingtickets(trainnumber,passengername,class,berths)
-values(@trainnumber,@passengername,@class,@berths);
---select 'Booking successfull'as message,  lastinsertid () as bookingid;
+    declare @Available int;
+    select @Available = availableBerths from Trains where trainnumber = @trainnumber;
+    if @Available >= @berths
+    begin
+        insert into BookingTickets values (@trainnumber, @passengername, @class,@berths );
+        update Trains
+        set availableBerths = availableBerths - @berths where trainnumber = @trainnumber;
+    end
+    else
+    begin
+        print 'Not Enough berths are available...!!';
+    end
 end
+
 --drop procedure sp_Cancelticket;
 
 select * from bookingtickets;
+
+
 CREATE OR ALTER PROCEDURE sp_Cancelticket
-    @trainnumber INT
+    @bid INT
 AS
 BEGIN
-    DECLARE @Berths INT;
-    DECLARE @Class VARCHAR(50);
-  --  DECLARE @TrainNumber INT;
-    DECLARE @AvailableSeats INT;
+    declare @TrainNo int, @berths int;
+-- Get booking details
+    select @TrainNo = trainnumber, @berths = Berths from BookingTickets where bookingid = @bid;
  
-    -- Retrieve details about the booking
-    SELECT
-        @Berths = Berths,
-        @Class = Class,
-        @TrainNumber = TrainNumber
-    FROM bookingtickets
-    WHERE trainnumber = @trainnumber;
+    delete from BookingTickets where bookingid = @bid;
+-- Restore available berths
  
-    -- Check if the booking exists
-    IF @TrainNumber IS NOT NULL
-    BEGIN
-        -- Retrieve available berths for the train
-        SELECT @AvailableSeats = availableBerths
-        FROM trains
-        WHERE TrainNumber = @TrainNumber;
- 
-        -- Update available seats in the trains table
-        UPDATE trains
-        SET availableBerths = @AvailableSeats + @Berths
-        WHERE TrainNumber = @TrainNumber;
- 
-        -- Delete the booking from bookingtickets table
-        DELETE FROM bookingtickets
-        WHERE trainnumber = @trainnumber;
- 
-        PRINT 'Ticket canceled successfully';
-    END
-    ELSE
-    BEGIN
-        PRINT 'Booking not found';
-    END
+    update Trains
+    set availableBerths = availableBerths + @berths
+    where trainnumber = @TrainNo;
 END;
  
 create or alter procedure showalltrains
 as
 begin
-select trainnumber,trainname
+select trainnumber,trainname 
 from train;
 end;
+
 create or alter procedure showbooking
 as
  begin
@@ -133,10 +119,11 @@ as
  from
  bookingtickets
  join
- train  on trainnumber = trainnumber
+ trains  on @trainnumber = trainnumber
  end
 
 
 
 Select * from Bookingtickets
 select * from trains
+

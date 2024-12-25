@@ -8,39 +8,38 @@ using System.Data.SqlClient;
 
 namespace Project
 {
-    class Program2
-    {
-        static SqlConnection con;
+    //class Program2
+    //{
+    //    static SqlConnection con;
 
-       //Method to get SQL connection
-        static SqlConnection getConnection()
-        {
-            try
-            {
-                con = new SqlConnection("Data Source=ICS-LT-D244D6FJ;Initial Catalog=RailwayReservation;Integrated Security=true;");
-                return con;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error establishing connection: " + ex.Message);
-                return null;
-            }
-        }
-    }
+    //   //Method to get SQL connection
+    //    static SqlConnection getConnection()
+    //    {
+    //        try
+    //        {
+    //            con = new SqlConnection("Data Source=ICS-LT-D244D6FJ;Initial Catalog=RailwayReservation;Integrated Security=true;");
+    //            return con;
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            Console.WriteLine("Error establishing connection: " + ex.Message);
+    //            return null;
+    //        }
+    //    }
+    //}
 
     class User
     {
-        static string connectionString = "Data Source=ICS-LT-D244D6FJ;Initial Catalog=RailwayReservation;Integrated Security=true;";
-        static Dictionary<int, string> bookings = new Dictionary<int, string>();
-        static int bookingIdCounter = 1;
+        //static string connectionString = "Data Source=ICS-LT-D244D6FJ/;Initial Catalog=RailwayReservation;Integrated Security=true;";
+        //static Dictionary<int, string> bookings = new Dictionary<int, string>();
+        //static int bookingIdCounter = 1;
         public static SqlConnection con;
-        public static SqlCommand cmd;
+       // public static SqlCommand cmd;
         public static SqlDataReader dr;
-        static SqlConnection Connection()
+        static SqlConnection GetConnection()
         {
-            con = new SqlConnection("Data Source=ICS-LT-D244D6FJ;Initial Catalog=MiniprojectRailway;" + "Integrated Security=true;");
-
-            con.Open();
+            con = new SqlConnection("Data Source=ICS-LT-D244D6FJ;Initial Catalog=RailwayReservation;Integrated Security=true;");
+           // con.Open();
             Console.WriteLine("Connected successfully:");
             return con;
         }
@@ -90,13 +89,11 @@ namespace Project
 
         public static void BookingTicket()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
                 try
                 {
 
-                     Connection();
+                    con = GetConnection();
+                 con.Open();
                     Console.WriteLine("Enter TrainId");
                     string trainNo = Console.ReadLine();
 
@@ -110,23 +107,21 @@ namespace Project
                     int berths = Convert.ToInt32(Console.ReadLine());
 
 
-
+               
                     SqlCommand cmd = new SqlCommand("sp_bookingtickets", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@trainnumber", trainNo);
                     cmd.Parameters.AddWithValue("@passengername", passengerName);
                     cmd.Parameters.AddWithValue("@class", trainClass);
-                    cmd.Parameters.AddWithValue("@berths", berths);
+                    cmd.Parameters.AddWithValue("@Berths", berths);
 
-                    cmd.ExecuteNonQuery();
+                   
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        Console.WriteLine("Ticket booked successfully");
-                    string query = "update Train set AvailableBerths = AvailableBerths - @berths " +
-                                   "where TrainId = @trainnumber AND AvailableBerths >= @berths and IsActive = 1";
+                    Console.WriteLine("Ticket booked successfully");
                     }
                     else
                     {
@@ -141,22 +136,22 @@ namespace Project
                 {
                     con.Close();
                 }
-            }
+            
         }
         public static void CancelTicket()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                try
+            con = GetConnection();
+            con.Open();
+            try
                 {
                      Console.Write("Enter Booking Id to Cancel");
-                        int trainnumber = Convert.ToInt32(Console.ReadLine());
+                     int bookingid = Convert.ToInt32(Console.ReadLine());
 
                     SqlCommand cmd = new SqlCommand("sp_Cancelticket", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                 
-                    cmd.Parameters.AddWithValue("@trainnumber", trainnumber);
-                    con.Open();
+                    cmd.Parameters.AddWithValue("@bid", bookingid);
+       
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
@@ -171,28 +166,28 @@ namespace Project
                 {
                     Console.WriteLine("An error occurred " + ex.Message);
                 }
-            }
+            
         }
 
         public static void ShowAllTrains()
         {
 
-            con = Connection();
-            string query = "select * from Trains where IsActive =1";
+            con = GetConnection();
+            con.Open();
+            string query = "select * from trains where IsActive =1";
             SqlCommand cmd = new SqlCommand(query, con);
             dr = cmd.ExecuteReader();
             Console.WriteLine("Avalible Trains");
             while (dr.Read())
             {
-                Console.WriteLine($"{dr["trainid"]} | {dr["trainName"]} | {dr["source"]} | {dr["availableBerths"]} | {dr["trainClass"]}");
+                Console.WriteLine($"{dr["trainnumber"]} | {dr["trainName"]} | {dr["source"]} | {dr["Destination"]}|{dr["availableBerths"]} |");
 
             }
 
         }
         public static void ShowBooking()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
+                con = GetConnection();
                 string query = "SELECT * FROM BookingTickets";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
@@ -201,9 +196,9 @@ namespace Project
                 Console.WriteLine("Booking Details");
                 foreach (DataRow row in dt.Rows)
                 {
-                    Console.WriteLine($"Trainnumber {row["Trainnumber"]}, TrainId {row["PassengerName"]}");
+                    Console.WriteLine($"Booking Id :{row["bookingid"]}|Trainnumber : {row["Trainnumber"]}| Passenger : {row["PassengerName"]}");
                 }
-            }
+            
         }
 
     }

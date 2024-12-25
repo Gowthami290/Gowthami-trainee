@@ -25,15 +25,15 @@ namespace Project
         {
             con = getConnection();
 
-            Console.WriteLine("Enter Train number,Train Name, Source, Destination,available berths, Class (1A, 2A)");
+            Console.WriteLine("Enter Train number,Train Name, Source, Destination,available berths");
             int trainnumber= Convert.ToInt32(Console.ReadLine());
             string trainName = Console.ReadLine();
             string source = Console.ReadLine();
             string destination = Console.ReadLine();
             int berths= Convert.ToInt32(Console.ReadLine());
-            string trainClass = Console.ReadLine();
+          
 
-            string query = "insert into Trains (trainnumber,TrainName, Source, Destination,availableBerths, trainClass,IsActive) values (@tnumber,@name, @source, @destination, @berths,@class,1)";
+            string query = "insert into Trains (trainnumber,TrainName, Source, Destination,availableBerths,IsActive) values (@tnumber,@name, @source, @destination, @berths,1)";
             cmd = new SqlCommand(query, con);
 
             cmd.Parameters.AddWithValue("@tnumber", trainnumber);
@@ -41,7 +41,6 @@ namespace Project
             cmd.Parameters.AddWithValue("@source", source);
             cmd.Parameters.AddWithValue("@destination", destination);
             cmd.Parameters.AddWithValue("@berths", berths);
-            cmd.Parameters.AddWithValue("@class", trainClass);
 
             cmd.ExecuteNonQuery();
             Console.WriteLine("Train added successfully!");
@@ -62,14 +61,13 @@ namespace Project
             string destination = Console.ReadLine();
             string trainClass = Console.ReadLine();
 
-            string query = "update Trains set TrainName = @name, Source = @source, Destination = @destination, trainClass = @class where trainnumber = @tnumber";
+            string query = "update Trains set TrainName = @name, Source = @source, Destination = @destination where trainnumber = @tnumber";
             cmd = new SqlCommand(query, con);
 
             cmd.Parameters.AddWithValue("@tnumber", trainnumber);
             cmd.Parameters.AddWithValue("@name", trainName);
             cmd.Parameters.AddWithValue("@source", source);
             cmd.Parameters.AddWithValue("@destination", destination);
-            cmd.Parameters.AddWithValue("@class", trainClass);
 
             cmd.ExecuteNonQuery();
             Console.WriteLine("Train modified successfully!");
