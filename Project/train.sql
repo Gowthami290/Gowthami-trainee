@@ -108,7 +108,7 @@ create or alter procedure showalltrains
 as
 begin
 select trainnumber,trainname 
-from train;
+from trains;
 end;
 
 create or alter procedure showbooking
